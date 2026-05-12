@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.Metrics;
+﻿using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using System.Security.Principal;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -61,104 +62,124 @@ namespace BankingService
 
 
              """);
-            
 
 
-            Console.WriteLine("Choose an Option");
+
+            Console.Write("Choose an Option: ");
 
 
             int setupMenu = Convert.ToInt32(Console.ReadLine());
-                switch(setupMenu)
-                {
+            switch (setupMenu)
+            {
 
-                    case 0:
-                        Console.WriteLine("Setup complete. Launching Main Menu...");
-                        break;
-
-                    case 1:
-                        Console.WriteLine("enter account number: ");
-                        accountNumber = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine($"Account number :  {accountNumber}");
-                        break; 
-
-                    case 2:
-                        Console.WriteLine("enter holder name");
-                        holderName = Console.ReadLine();
-                        Console.WriteLine($"holder name :  {holderName}");
-                        break;
-
-                    case 3:
-                        Console.WriteLine("enter current balance");
-                        balance = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine($"current balance :  {balance}");
-                        break;
-
-                    case 4:
-                        Console.WriteLine("enter 1=active / 0=inactive");
-                        isActive = Convert.ToBoolean(Console.ReadLine());
-                        Console.WriteLine($"account active :  {isActive}");
-                        break;
-
-                    case 5:
-                        Console.WriteLine("enter S / C / F");
-                        accountType = Convert.ToChar (Console.ReadLine());
-                        Console.WriteLine($"account type :  {accountType}");
-                        break;
-
-                    case 6:
-                        Console.WriteLine("enter 1=employed / 0=not");
-                        isEmployed = Convert.ToBoolean(Console.ReadLine());
-                        Console.WriteLine($"Employee status :  {isEmployed}");
-                        break;
-
-                    case 7:
-                        Console.WriteLine("enter monthly salary");
-                        MonthlySalary = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine($"Salary :  {MonthlySalary}");
-                        break;
-
-                    case 8:
-                        Console.WriteLine("enter credit score");
-                        CreditScore = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine($"Credit score :  {CreditScore}");
-                        break;
-
-                    case 9:
-                        Console.WriteLine("enter customer age");
-                        Age = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine($"Age :  {Age}");
-                        break;
-
-                    case 10:
-                        Console.WriteLine("enter last deposit amount");
-                        deposit = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine($"deposit :  {deposit}");
-                        break;
-
-                    case 11:
-                        Console.WriteLine("enter last withdrawal");
-                        withdrawal = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine($"withdrawal :  {withdrawal}");
-                        break;
-
-                    case 12:
-                        Console.WriteLine("enter annual interest rate");
-                        annualRate = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine($"annual rate :  {annualRate}");
-                        break;
-
-                    case 13:
-                        Console.WriteLine("enter avg monthly balance");
-                        avgBalance = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine($"Average :  {avgBalance}");
-                        break;
-
-                    default : Console.WriteLine("Invalid option. Please choose 1–13 or 0 to finish.");
+                case 0:
+                    Console.WriteLine("Setup complete. Launching Main Menu...");
                     break;
-                }
-        }
+
+                case 1:
+                    Console.WriteLine("enter account number: ");
+                    accountNumber = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Account number :  {accountNumber}");
+                    break;
+
+                case 2:
+                    Console.WriteLine("enter holder name");
+                    holderName = Console.ReadLine();
+                    Console.WriteLine($"holder name :  {holderName}");
+                    break;
+
+                case 3:
+                    Console.WriteLine("enter current balance");
+                    balance = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"current balance :  {balance}");
+                    break;
+
+                case 4:
+                    Console.WriteLine("enter 1=active / 0=inactive");
+                    isActive = Convert.ToBoolean(Console.ReadLine());
+                    Console.WriteLine($"account active :  {isActive}");
+                    break;
+
+                case 5:
+                    Console.WriteLine("enter S / C / F");
+                    accountType = Convert.ToChar(Console.ReadLine());
+                    Console.WriteLine($"account type :  {accountType}");
+                    break;
+
+                case 6:
+                    Console.WriteLine("enter 1=employed / 0=not");
+                    isEmployed = Convert.ToBoolean(Console.ReadLine());
+                    Console.WriteLine($"Employee status :  {isEmployed}");
+                    break;
+
+                case 7:
+                    Console.WriteLine("enter monthly salary");
+                    MonthlySalary = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Salary :  {MonthlySalary}");
+                    break;
+
+                case 8:
+                    Console.WriteLine("enter credit score");
+                    CreditScore = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Credit score :  {CreditScore}");
+                    break;
+
+                case 9:
+                    Console.WriteLine("enter customer age");
+                    Age = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Age :  {Age}");
+                    break;
+
+                case 10:
+                    Console.WriteLine("enter last deposit amount");
+                    deposit = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"deposit :  {deposit}");
+                    break;
+
+                case 11:
+                    Console.WriteLine("enter last withdrawal");
+                    withdrawal = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"withdrawal :  {withdrawal}");
+                    break;
+
+                case 12:
+                    Console.WriteLine("enter annual interest rate");
+                    annualRate = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"annual rate :  {annualRate}");
+                    break;
+
+                case 13:
+                    Console.WriteLine("enter avg monthly balance");
+                    avgBalance = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Average :  {avgBalance}");
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option. Please choose 1–13 or 0 to finish.");
+                    break;
+            }
 
             //Task 2 
 
+            Console.WriteLine("NATIONAL BANK OF OMAN — Unified Banking System");
+            Console.WriteLine("MAIN MENU");
+            Console.WriteLine("1) ATM Services");
+            
+
+            Console.Write("Choose an Option: ");
+            int MainMenuOption = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("=== ATM SERVICES ===");
+            Console.WriteLine("1) Bank Info");
+            Console.WriteLine("2) Branch Info");
+            Console.WriteLine("3) Opening Hours");
+            Console.WriteLine("0) Back to Main Menu");
+
+            Console.Write("Select A Service: ");
+
+            int ATMserviceOption = Convert.ToInt32(Console.ReadLine());
+
+
+        }
     }
 }
