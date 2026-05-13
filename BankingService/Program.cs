@@ -179,7 +179,36 @@ namespace BankingService
 
             int ATMserviceOption = Convert.ToInt32(Console.ReadLine());
 
+            switch (ATMserviceOption)
+            {
+                //If the user choose number 1, it will desplay the information about the bank.
+                case 1:
+                    Console.WriteLine("Bank Name: National Bank Of Oman");
+                    Console.WriteLine("Tagline: SAOG");
+                    Console.WriteLine("founding year: 1973");
+                    break;
 
+                //If the user choose number 2, it will display an information about the branch.
+                case 2:
+                    Console.WriteLine("branch name: Sohar branch");
+                    Console.WriteLine("city: Sohar");
+                    Console.WriteLine("address: North Albatinah, Sohar");
+                    break;
+                //If the user choose number 3, it will display the working hours of the bank.
+                case 3:
+                    Console.WriteLine("weekday hours : 8:00 AM - 2:00 pm");
+                    Console.WriteLine("weekend hours: Closed");
+                    break;
+                //If the user choose number 0, it display a returning to main menu.
+                case 0:
+                    Console.WriteLine("Returning to Main Menu...");
+                    break;
+
+               default :
+                    Console.WriteLine("Invalid selection, Please try again.");
+                    break;
+
+            }   
         }
     }
 }
