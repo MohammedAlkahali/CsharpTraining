@@ -23,11 +23,11 @@ namespace BankingService
 
             bool isEmployed = true;
 
-            double MonthlySalary = 0.000;
+            double MonthlySalary = 350.000;
 
             int CreditScore = 0;
 
-            int Age = 0;
+            int Age = 24;
 
             double deposit = 0.000;
 
@@ -64,20 +64,20 @@ namespace BankingService
 
              
              """);
-            int back = Convert.ToInt32(Console.ReadLine());
+            //int back = Convert.ToInt32(Console.ReadLine());
             Console.Write("Choose an Option: ");
             int setupMenu = Convert.ToInt32(Console.ReadLine());
             switch (setupMenu)
             {
 
                 case 0:
-                    Console.WriteLine($"Setup complete. Launching Main Menu...");
+                    Console.WriteLine("Setup complete. Launching Main Menu...");
                     break;
 
                 case 1:
                     Console.WriteLine("enter account number: ");
                     accountNumber = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine($"Account number :  {accountNumber}");
+                    Console.WriteLine($"Account number :  {accountNumber}"); //I used $ to let me use the variable inside the WriteLine
                     break;
 
                 case 2:
@@ -159,8 +159,8 @@ namespace BankingService
 
             //Task 2  
             //Display the name of the bank + Main menu
-            Console.WriteLine("NATIONAL BANK OF OMAN — Unified Banking System");
-            Console.WriteLine("MAIN MENU");
+            Console.WriteLine("===NATIONAL BANK OF OMAN — Unified Banking System===");
+            Console.WriteLine("===MAIN MENU===");
             Console.WriteLine("1) ATM Services");
             Console.WriteLine("2) Account Management - Available Soon");
             Console.WriteLine("3) Loan Services - Available Soon");
@@ -186,8 +186,8 @@ namespace BankingService
             switch (ATMserviceOption)
             {
 
-                case 1:
-                    Console.WriteLine("=== ATM SERVICES ===");
+                case 1: //This case to show the menu when the customer select 1) ATM Welcome & Display
+                    Console.WriteLine("=== SERVICES ===");
                     Console.WriteLine("1) Bank Info");
                     Console.WriteLine("2) Branch Info");
                     Console.WriteLine("3) Opening Hours");
@@ -198,13 +198,15 @@ namespace BankingService
                     {
                         //If the user choose number 1, it will desplay the information about the bank.
                         case 1:
+                            Console.WriteLine("===NATIONAL BANK OF OMAN INFORMATION===");
                             Console.WriteLine("Bank Name: National Bank Of Oman");
-                            Console.WriteLine("Tagline: SAOG");
+                            Console.WriteLine("Tagline: Your trusted financial partner");
                             Console.WriteLine("founding year: 1973");
                             break;
 
                         //If the user choose number 2, it will display an information about the branch.
                         case 2:
+                            Console.WriteLine("===BRANCH INFORMATION===");
                             Console.WriteLine("branch name: Sohar branch");
                             Console.WriteLine("city: Sohar");
                             Console.WriteLine("address: North Albatinah, Sohar");
@@ -212,6 +214,7 @@ namespace BankingService
 
                         //If the user choose number 3, it will display the working hours of the bank.
                         case 3:
+                            Console.WriteLine("===WORKING HOURS===");
                             Console.WriteLine("weekday hours : 8:00 AM - 2:00 pm");
                             Console.WriteLine("weekend hours: Closed");
                             break;
@@ -226,9 +229,9 @@ namespace BankingService
                             break;
                     }
                     break;
-                    
-                
-                case 2:
+
+                    //This is task 3
+                case 2: //This case to view the account data for a customer
                     Console.WriteLine("=== VIEW ACCOUNT DATA ===");
                     Console.WriteLine($"Account Number : {accountNumber}");
                     Console.WriteLine($"Holder Name : {holderName}");
@@ -237,30 +240,49 @@ namespace BankingService
                     Console.WriteLine($"Account Type : {accountType}");
                     break;
 
-                case 3:
-                    Console.WriteLine("=== AUTHENTICATION ===");
-                    break;
 
+                    //This is for task 4
+                case 3: //This case to show the menu to select from when the customer select 3) ATM PIN Validation
+                    Console.WriteLine("=== AUTHENTICATION ===");
+                    Console.WriteLine("1) Enter PIN");
+                    Console.WriteLine("2) Forgot PIN");
+                    Console.WriteLine("0) Back");
+                    Console.Write("Select: ");
+                    int AUTHselection = Convert.ToInt32(Console.ReadLine());
+                    const int CORRECT_PIN = 4821, MAX_ATTEMPTS = 3; //Declare the correct PIN and the max attempt, and I used const so it can't be changed
+                    switch (AUTHselection)
+                    {
+                        case 1:
+                            Console.WriteLine("Enter PIN");
+                            int PIN = Convert.ToInt32(Console.ReadLine());
+                            if (PIN == CORRECT_PIN)  //If the PIN the customer enter is matching the correct PIN ,he will get a message
+                            {
+                                Console.WriteLine($"Access granted. Welcome, {holderName}");
+                            }
+                            else if (PIN != CORRECT_PIN) // This means if PIN is not equal to the correct PIN
+                            {
+                                Console.WriteLine("Incorrect PIN");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid PIN format");
+                            }
+                            break;
+                        case 2:
+                            Console.WriteLine("Please visit the nearest branch with your National ID.");
+                            break;
+                    }
+                    break;
                 case 4:
                     Console.WriteLine("=== PRINT RECEIPT ===");
                     break;
 
-                default:
+                    default:
                     Console.WriteLine("Invalid option. ");
                     break;
             }
 
-
-
-
-            //Task 3
-
-            Console.WriteLine("=== VIEW ACCOUNT DATA ===");
-            Console.WriteLine($"Account Number : {accountNumber}");
-            Console.WriteLine($"Holder Name : {holderName}");
-            Console.WriteLine($"Balance : {balance}");
-            Console.WriteLine($"Account Status : {isActive}");
-            Console.WriteLine($"Account Type : {accountType}");
+            
         }
     }
 }
