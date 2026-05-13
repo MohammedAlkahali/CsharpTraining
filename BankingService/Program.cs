@@ -11,17 +11,17 @@ namespace BankingService
         {
             //Task 1
 
-            int accountNumber = 0;
+            int accountNumber = 112233;
 
-            string holderName = "";
+            string holderName = "Mohammed Alkahali";
 
-            double balance = 0.000;
+            double balance = 1000.000;
 
-            bool isActive = false;
+            bool isActive = true;
 
             char accountType = 'A';
 
-            bool isEmployed = false;
+            bool isEmployed = true;
 
             double MonthlySalary = 0.000;
 
@@ -36,6 +36,8 @@ namespace BankingService
             double annualRate = 0.000;
 
             double avgBalance = 0.000;
+
+
 
 
             Console.WriteLine("""
@@ -60,20 +62,16 @@ namespace BankingService
 
              0) Setup complete — launch Main Menu
 
-
+             
              """);
-
-
-
+            int back = Convert.ToInt32(Console.ReadLine());
             Console.Write("Choose an Option: ");
-
-
             int setupMenu = Convert.ToInt32(Console.ReadLine());
             switch (setupMenu)
             {
 
                 case 0:
-                    Console.WriteLine("Setup complete. Launching Main Menu...");
+                    Console.WriteLine($"Setup complete. Launching Main Menu...");
                     break;
 
                 case 1:
@@ -159,56 +157,110 @@ namespace BankingService
                     break;
             }
 
-            //Task 2 
-
+            //Task 2  
+            //Display the name of the bank + Main menu
             Console.WriteLine("NATIONAL BANK OF OMAN — Unified Banking System");
             Console.WriteLine("MAIN MENU");
             Console.WriteLine("1) ATM Services");
-            
+            Console.WriteLine("2) Account Management - Available Soon");
+            Console.WriteLine("3) Loan Services - Available Soon");
+            Console.WriteLine("4) Currency Exchange - Available Soon");
+            Console.WriteLine("5) Credit Card Portal - Available Soon");
+            Console.WriteLine("6) Branch Services - Available Soon");
+            Console.WriteLine("7) Reports & Admin - Available Soon");
+            Console.WriteLine("8)[BONUS] Full Terminal - Available Soon");
+            Console.WriteLine("0) Exit");
 
             Console.Write("Choose an Option: ");
             int MainMenuOption = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("=== ATM SERVICES ===");
-            Console.WriteLine("1) Bank Info");
-            Console.WriteLine("2) Branch Info");
-            Console.WriteLine("3) Opening Hours");
-            Console.WriteLine("0) Back to Main Menu");
+            Console.WriteLine("1) ATM Welcome & Display");
+            Console.WriteLine("2) Account Data Viewer");
+            Console.WriteLine("3) ATM PIN Validation");
+            Console.WriteLine("4) ATM Receipt Printer");
 
             Console.Write("Select A Service: ");
-
             int ATMserviceOption = Convert.ToInt32(Console.ReadLine());
 
             switch (ATMserviceOption)
             {
-                //If the user choose number 1, it will desplay the information about the bank.
+
                 case 1:
-                    Console.WriteLine("Bank Name: National Bank Of Oman");
-                    Console.WriteLine("Tagline: SAOG");
-                    Console.WriteLine("founding year: 1973");
-                    break;
+                    Console.WriteLine("=== ATM SERVICES ===");
+                    Console.WriteLine("1) Bank Info");
+                    Console.WriteLine("2) Branch Info");
+                    Console.WriteLine("3) Opening Hours");
+                    Console.WriteLine("0) Back to Main Menu");
+                    Console.Write("Select: ");
+                    int ATMselection = Convert.ToInt32(Console.ReadLine());
+                    switch (ATMselection)
+                    {
+                        //If the user choose number 1, it will desplay the information about the bank.
+                        case 1:
+                            Console.WriteLine("Bank Name: National Bank Of Oman");
+                            Console.WriteLine("Tagline: SAOG");
+                            Console.WriteLine("founding year: 1973");
+                            break;
 
-                //If the user choose number 2, it will display an information about the branch.
+                        //If the user choose number 2, it will display an information about the branch.
+                        case 2:
+                            Console.WriteLine("branch name: Sohar branch");
+                            Console.WriteLine("city: Sohar");
+                            Console.WriteLine("address: North Albatinah, Sohar");
+                            break;
+
+                        //If the user choose number 3, it will display the working hours of the bank.
+                        case 3:
+                            Console.WriteLine("weekday hours : 8:00 AM - 2:00 pm");
+                            Console.WriteLine("weekend hours: Closed");
+                            break;
+
+                        //If the user choose number 0, it display a returning to main menu.
+                        case 0:
+                            Console.WriteLine("Returning to Main Menu...");
+                            break;
+
+                        default:
+                            Console.WriteLine("Invalid selection, Please try again.");
+                            break;
+                    }
+                    break;
+                    
+                
                 case 2:
-                    Console.WriteLine("branch name: Sohar branch");
-                    Console.WriteLine("city: Sohar");
-                    Console.WriteLine("address: North Albatinah, Sohar");
+                    Console.WriteLine("=== VIEW ACCOUNT DATA ===");
+                    Console.WriteLine($"Account Number : {accountNumber}");
+                    Console.WriteLine($"Holder Name : {holderName}");
+                    Console.WriteLine($"Balance : {balance}");
+                    Console.WriteLine($"Account Status : {isActive}");
+                    Console.WriteLine($"Account Type : {accountType}");
                     break;
-                //If the user choose number 3, it will display the working hours of the bank.
+
                 case 3:
-                    Console.WriteLine("weekday hours : 8:00 AM - 2:00 pm");
-                    Console.WriteLine("weekend hours: Closed");
-                    break;
-                //If the user choose number 0, it display a returning to main menu.
-                case 0:
-                    Console.WriteLine("Returning to Main Menu...");
+                    Console.WriteLine("=== AUTHENTICATION ===");
                     break;
 
-               default :
-                    Console.WriteLine("Invalid selection, Please try again.");
+                case 4:
+                    Console.WriteLine("=== PRINT RECEIPT ===");
                     break;
 
-            }   
+                default:
+                    Console.WriteLine("Invalid option. ");
+                    break;
+            }
+
+
+
+
+            //Task 3
+
+            Console.WriteLine("=== VIEW ACCOUNT DATA ===");
+            Console.WriteLine($"Account Number : {accountNumber}");
+            Console.WriteLine($"Holder Name : {holderName}");
+            Console.WriteLine($"Balance : {balance}");
+            Console.WriteLine($"Account Status : {isActive}");
+            Console.WriteLine($"Account Type : {accountType}");
         }
     }
 }
