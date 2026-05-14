@@ -64,12 +64,13 @@ namespace BankingService
 
              
              """);
+            Console.WriteLine("");
             //int back = Convert.ToInt32(Console.ReadLine());
             Console.Write("Choose an Option: ");
             int setupMenu = Convert.ToInt32(Console.ReadLine());
             switch (setupMenu)
             {
-
+                
                 case 0:
                     Console.WriteLine("Setup complete. Launching Main Menu...");
                     break;
@@ -159,26 +160,45 @@ namespace BankingService
 
             //Task 2  
             //Display the name of the bank + Main menu
+
             Console.WriteLine("===NATIONAL BANK OF OMAN — Unified Banking System===");
+            Console.WriteLine(""); // For spacing 
+
             Console.WriteLine("===MAIN MENU===");
+            Console.WriteLine("");
+            Console.WriteLine("");
             Console.WriteLine("1) ATM Services");
+            Console.WriteLine("");
             Console.WriteLine("2) Account Management - Available Soon");
+            Console.WriteLine("");
             Console.WriteLine("3) Loan Services - Available Soon");
+            Console.WriteLine("");
             Console.WriteLine("4) Currency Exchange - Available Soon");
+            Console.WriteLine("");
             Console.WriteLine("5) Credit Card Portal - Available Soon");
+            Console.WriteLine("");
             Console.WriteLine("6) Branch Services - Available Soon");
+            Console.WriteLine("");
             Console.WriteLine("7) Reports & Admin - Available Soon");
+            Console.WriteLine("");
             Console.WriteLine("8)[BONUS] Full Terminal - Available Soon");
+            Console.WriteLine("");
             Console.WriteLine("0) Exit");
 
             Console.Write("Choose an Option: ");
             int MainMenuOption = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("=== ATM SERVICES ===");
+            Console.WriteLine("");
+            Console.WriteLine("");
             Console.WriteLine("1) ATM Welcome & Display");
+            Console.WriteLine("");
             Console.WriteLine("2) Account Data Viewer");
+            Console.WriteLine("");
             Console.WriteLine("3) ATM PIN Validation");
+            Console.WriteLine("");
             Console.WriteLine("4) ATM Receipt Printer");
+            Console.WriteLine("");
 
             Console.Write("Select A Service: ");
             int ATMserviceOption = Convert.ToInt32(Console.ReadLine());
@@ -188,35 +208,56 @@ namespace BankingService
 
                 case 1: //This case to show the menu when the customer select 1) ATM Welcome & Display
                     Console.WriteLine("=== SERVICES ===");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
                     Console.WriteLine("1) Bank Info");
+                    Console.WriteLine("");
                     Console.WriteLine("2) Branch Info");
+                    Console.WriteLine("");
                     Console.WriteLine("3) Opening Hours");
+                    Console.WriteLine("");
                     Console.WriteLine("0) Back to Main Menu");
+                    Console.WriteLine("");
                     Console.Write("Select: ");
+                    Console.WriteLine("");
                     int ATMselection = Convert.ToInt32(Console.ReadLine());
                     switch (ATMselection)
                     {
                         //If the user choose number 1, it will desplay the information about the bank.
                         case 1:
                             Console.WriteLine("===NATIONAL BANK OF OMAN INFORMATION===");
+                            Console.WriteLine("");
+                            Console.WriteLine("");
                             Console.WriteLine("Bank Name: National Bank Of Oman");
+                            Console.WriteLine("");
                             Console.WriteLine("Tagline: Your trusted financial partner");
+                            Console.WriteLine("");
                             Console.WriteLine("founding year: 1973");
+                            Console.WriteLine("");
                             break;
 
                         //If the user choose number 2, it will display an information about the branch.
                         case 2:
                             Console.WriteLine("===BRANCH INFORMATION===");
+                            Console.WriteLine("");
+                            Console.WriteLine("");
                             Console.WriteLine("branch name: Sohar branch");
+                            Console.WriteLine("");
                             Console.WriteLine("city: Sohar");
+                            Console.WriteLine("");
                             Console.WriteLine("address: North Albatinah, Sohar");
+                            Console.WriteLine("");
                             break;
 
                         //If the user choose number 3, it will display the working hours of the bank.
                         case 3:
                             Console.WriteLine("===WORKING HOURS===");
+                            Console.WriteLine("");
+                            Console.WriteLine("");
                             Console.WriteLine("weekday hours : 8:00 AM - 2:00 pm");
+                            Console.WriteLine("");
                             Console.WriteLine("weekend hours: Closed");
+                            Console.WriteLine("");
                             break;
 
                         //If the user choose number 0, it display a returning to main menu.
@@ -233,23 +274,37 @@ namespace BankingService
                     //This is task 3
                 case 2: //This case to view the account data for a customer
                     Console.WriteLine("=== VIEW ACCOUNT DATA ===");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
                     Console.WriteLine($"Account Number : {accountNumber}");
+                    Console.WriteLine("");
                     Console.WriteLine($"Holder Name : {holderName}");
+                    Console.WriteLine("");
                     Console.WriteLine($"Balance : {balance}");
+                    Console.WriteLine("");
                     Console.WriteLine($"Account Status : {isActive}");
+                    Console.WriteLine("");
                     Console.WriteLine($"Account Type : {accountType}");
+                    Console.WriteLine("");
                     break;
 
 
                     //This is for task 4
                 case 3: //This case to show the menu to select from when the customer select 3) ATM PIN Validation
                     Console.WriteLine("=== AUTHENTICATION ===");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
                     Console.WriteLine("1) Enter PIN");
+                    Console.WriteLine("");
                     Console.WriteLine("2) Forgot PIN");
+                    Console.WriteLine("");
                     Console.WriteLine("0) Back");
+                    Console.WriteLine("");
                     Console.Write("Select: ");
+                    Console.WriteLine("");
                     int AUTHselection = Convert.ToInt32(Console.ReadLine());
-                    const int CORRECT_PIN = 4821, MAX_ATTEMPTS = 3; //Declare the correct PIN and the max attempt, and I used const so it can't be changed
+                    const int CORRECT_PIN = 4821; 
+                    int MAX_ATTEMPTS = 3; //Declare the correct PIN and the max attempt, and I used const so it can't be changed
                     switch (AUTHselection)
                     {
                         case 1:
@@ -267,6 +322,7 @@ namespace BankingService
                             {
                                 Console.WriteLine("Invalid PIN format");
                             }
+                            MAX_ATTEMPTS--;
                             break;
                         case 2:
                             Console.WriteLine("Please visit the nearest branch with your National ID.");
