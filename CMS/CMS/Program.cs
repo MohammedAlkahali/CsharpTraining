@@ -75,7 +75,7 @@
                     case 1: // If the user select (1) a new menu will desplay for the patient 
                         int select;
                         while (exit == false)
-                        {
+                        {  // Sub menu for patient 
                             Console.WriteLine("");
                             Console.WriteLine(" PATIENT MANAGEMENT"     );
                             Console.WriteLine("");
@@ -98,6 +98,9 @@
                             {
                                 case 1:
                                     Console.WriteLine(" ADD Patient ");
+                                    if (patientCount == MAX_PATIENTS)
+                                        Console.WriteLine("Clinic is full. Cannot add more patients.");
+
                                     break;
                                 case 2: 
                                     Console.WriteLine("DISPLAY ALL Patients ");
@@ -118,7 +121,7 @@
 
                     case 2:  // If the user select (2) a new menu will desplay for the doctor 
                         while (exit == false)
-                        {
+                        {  // Sub menu for doctor
                             Console.WriteLine("");
                             Console.WriteLine("DOCTOR MANAGEMENT");
                             Console.WriteLine("");
@@ -161,7 +164,7 @@
 
                     case 3:  // If the user select (2) a new menu will desplay for the appointment 
                         while (exit == false)
-                        {
+                        {  // Sub menu for appointment
                             Console.WriteLine("");
                             Console.WriteLine("APPOINTMENT MANAGEMENT");
                             Console.WriteLine("");
