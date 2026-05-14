@@ -76,6 +76,7 @@
                         int select;
                         while (exit == false)
                         {
+                            Console.WriteLine("");
                             Console.WriteLine(" PATIENT MANAGEMENT"     );
                             Console.WriteLine("");
                             Console.WriteLine(" 1. Add New Patient"     );
@@ -116,8 +117,48 @@
                         break;
 
                     case 2:
-                        Console.WriteLine("DOCTOR MANAGEMENT");
+                        while (exit == false)
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("DOCTOR MANAGEMENT");
+                            Console.WriteLine("");
+                            Console.WriteLine(" 1. Add New Doctor ");
+                            Console.WriteLine("");
+                            Console.WriteLine(" 2. Display All Doctors");
+                            Console.WriteLine("");
+                            Console.WriteLine(" 3. Update Consultation Fee ");
+                            Console.WriteLine("");
+                            Console.WriteLine(" 4. Delete Doctor");
+                            Console.WriteLine("");
+                            Console.WriteLine(" 0. Back to Main Menu");
+                            Console.WriteLine("");
+
+                            Console.Write("Select: ");
+
+                            select = Convert.ToInt32(Console.ReadLine());
+
+                            switch (select)
+                            {
+                                case 1:
+                                    Console.WriteLine(" ADD Doctor ");
+                                    break;
+                                case 2:
+                                    Console.WriteLine("DISPLAY ALL Doctors ");
+                                    break;
+                                case 3:
+                                    Console.WriteLine("Update Consultation Fee ");
+                                    break;
+                                case 4:
+                                    Console.WriteLine("DELETE Doctor ");
+                                    break;
+                                case 0:
+                                    Console.WriteLine("Exiting...");
+                                    exit = true;
+                                    break;
+                            }
+                        }
                         break;
+
                     case 3:
                         Console.WriteLine("APPOINTMENT MANAGEMENT");
                         break;
