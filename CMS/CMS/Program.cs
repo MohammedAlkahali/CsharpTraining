@@ -55,11 +55,16 @@
 
             while (exit == false)
             {
-                Console.WriteLine("CLINIC MANAGEMENT SYSTEM ");  //|
-                Console.WriteLine("1. Patient Management    ");  //|
-                Console.WriteLine("2. Doctor Management     ");  //| ---> This is the main menu to choose from
+                Console.WriteLine("CLINIC MANAGEMENT SYSTEM" );  //|
+                Console.WriteLine("");                           //|
+                Console.WriteLine("1. Patient Management"    );  //|
+                Console.WriteLine("");                           //|
+                Console.WriteLine("2. Doctor Management"     );  //| ---> This is the main menu to choose from
+                Console.WriteLine("");                           //|                                        
                 Console.WriteLine("3. Appointment Management");  //|
-                Console.WriteLine("0. Exit                  ");  //|
+                Console.WriteLine("");                           //|
+                Console.WriteLine("0. Exit"                  );
+                Console.WriteLine(""); 
 
                 Console.Write("Enter your choice: ");
 
@@ -67,9 +72,49 @@
 
                 switch (choice)
                 {
-                    case 1:
-                        Console.WriteLine(" PATIENT MANAGEMENT");
+                    case 1: // If the user select (1) a new menu will desplay for the patient to choose
+                        int select;
+                        while (exit == false)
+                        {
+                            Console.WriteLine(" PATIENT MANAGEMENT"     );
+                            Console.WriteLine("");
+                            Console.WriteLine(" 1. Add New Patient"     );
+                            Console.WriteLine("");
+                            Console.WriteLine(" 2. Display All Patients");
+                            Console.WriteLine("");
+                            Console.WriteLine(" 3. Update Patient Phone");
+                            Console.WriteLine("");
+                            Console.WriteLine(" 4. Delete Patient"      );
+                            Console.WriteLine("");
+                            Console.WriteLine(" 0. Back to Main Menu"   );
+                            Console.WriteLine("");
+
+                            Console.Write("Select: ");
+
+                            select = Convert.ToInt32(Console.ReadLine());
+
+                            switch(select)
+                            {
+                                case 1:
+                                    Console.WriteLine(" ADD Patient ");
+                                    break;
+                                case 2: 
+                                    Console.WriteLine("DISPLAY ALL Patients ");
+                                    break;
+                                case 3: 
+                                    Console.WriteLine("UPDATE Patient Phone ");
+                                    break;
+                                case 4:
+                                    Console.WriteLine("DELETE Patient ");
+                                    break;
+                                case 0:
+                                    Console.WriteLine("Exiting...");
+                                    exit = true;
+                                    break;
+                            }
+                        }
                         break;
+
                     case 2:
                         Console.WriteLine("DOCTOR MANAGEMENT");
                         break;
