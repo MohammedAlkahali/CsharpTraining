@@ -72,7 +72,7 @@
 
                 switch (choice)
                 {
-                    case 1: // If the user select (1) a new menu will desplay for the patient to choose
+                    case 1: // If the user select (1) a new menu will desplay for the patient 
                         int select;
                         while (exit == false)
                         {
@@ -116,7 +116,7 @@
                         }
                         break;
 
-                    case 2:
+                    case 2:  // If the user select (2) a new menu will desplay for the doctor 
                         while (exit == false)
                         {
                             Console.WriteLine("");
@@ -159,9 +159,51 @@
                         }
                         break;
 
-                    case 3:
-                        Console.WriteLine("APPOINTMENT MANAGEMENT");
+                    case 3:  // If the user select (2) a new menu will desplay for the appointment 
+                        while (exit == false)
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("APPOINTMENT MANAGEMENT");
+                            Console.WriteLine("");
+                            Console.WriteLine("1. Book New Appointment ");
+                            Console.WriteLine("");
+                            Console.WriteLine("2. Display All Appointments");
+                            Console.WriteLine("");
+                            Console.WriteLine("3. Update Appointment Status ");
+                            Console.WriteLine("");
+                            Console.WriteLine("4. Cancel Appointment");
+                            Console.WriteLine("");
+                            Console.WriteLine("0. Back to Main Menu ");
+                            Console.WriteLine("");
+
+                            Console.Write("Select: ");
+                            
+
+                            select = Convert.ToInt32(Console.ReadLine());
+
+                            switch(select)
+                            {
+                                case 1:
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Book New Appointment");
+                                    break;
+                                case 2:
+                                    Console.WriteLine("Display All Appointments");
+                                    break;
+                                case 3:
+                                    Console.WriteLine("Update Appointment Status");
+                                    break;
+                                case 4:
+                                    Console.WriteLine("Cancel Appointment");
+                                    break;
+                                case 0:
+                                    Console.WriteLine("Exiting...");
+                                    exit = true;
+                                    break;
+                            }
+                        }     
                         break;
+
                     case 0:
                         Console.WriteLine("Exiting...");
                         exit = true;
