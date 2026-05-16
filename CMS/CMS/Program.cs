@@ -50,7 +50,7 @@
 
             // Start Region 2 - Wrap the entire program in a while (true) loop.
             int choice;
-
+            int select;
             bool exit = false;
 
             while (exit == false)
@@ -73,8 +73,9 @@
                 switch (choice)
                 {
                     case 1: // If the user select (1) a new menu will desplay for the patient 
-                        int select;
-                        while (exit == false)
+                        
+                        bool patientExit = false;
+                        while (patientExit == false)
                         {  // Sub menu for patient 
                             Console.WriteLine("");
                             Console.WriteLine(" PATIENT MANAGEMENT"     );
@@ -98,10 +99,47 @@
                             {
                                 case 1:
                                     Console.WriteLine(" ADD Patient ");
-                                    if (patientCount == MAX_PATIENTS)
-                                        Console.WriteLine("Clinic is full. Cannot add more patients.");
+                                    if (patientCount == MAX_PATIENTS) //Check if the number of patient = the maximum
+                                        Console.WriteLine("Clinic is full. Cannot add more patients." );
+                                    else
+                                    {
+                                        Console.Write("Enter patient name: ");
+                                        string name = Console.ReadLine();
+                                        if (name == "")
+                                            Console.WriteLine("Error, the name can't be empty");
+                                        else
+                                        {
+                                            Console.WriteLine("Enter patient age: ");
+                                           int age = Convert.ToInt32(Console.ReadLine());
+                                            if (age < 1 || age > 120)
+                                            {
+                                                Console.WriteLine("Error: Age must be between 1 and 120.");
+                                            }
+                                            else
+                                            {
+                                                Console.Write("Enter patient phone: ");
+                                                string phone = Console.ReadLine();
 
+                                                if (!p1Active)
+                                                {
+                                                    p1Name = name; p1Age = age; p1Phone = phone; p1Active = true;
+                                                }
+                                                else if (!p2Active)
+                                                {
+                                                    p2Name = name; p2Age = age; p2Phone = phone; p2Active = true;
+                                                }
+                                                else if (!p3Active)
+                                                {
+                                                    p3Name = name; p3Age = age; p3Phone = phone; p3Active = true;
+                                                }
+
+                                                patientCount++;
+                                                Console.WriteLine("Patient added successfully.");
+                                            }
+                                        }
+                                    }
                                     break;
+
                                 case 2: 
                                     Console.WriteLine("DISPLAY ALL Patients ");
                                     break;
@@ -113,14 +151,16 @@
                                     break;
                                 case 0:
                                     Console.WriteLine("Exiting...");
-                                    exit = true;
+                                    patientExit = true;
                                     break;
                             }
                         }
                         break;
 
                     case 2:  // If the user select (2) a new menu will desplay for the doctor 
-                        while (exit == false)
+
+                        bool doctorExit = false;
+                        while (doctorExit == false)
                         {  // Sub menu for doctor
                             Console.WriteLine("");
                             Console.WriteLine("DOCTOR MANAGEMENT");
@@ -156,14 +196,15 @@
                                     break;
                                 case 0:
                                     Console.WriteLine("Exiting...");
-                                    exit = true;
+                                    doctorExit = true;
                                     break;
                             }
                         }
                         break;
 
                     case 3:  // If the user select (2) a new menu will desplay for the appointment 
-                        while (exit == false)
+                        bool appointmentExit = false;
+                        while (appointmentExit == false)
                         {  // Sub menu for appointment
                             Console.WriteLine("");
                             Console.WriteLine("APPOINTMENT MANAGEMENT");
@@ -201,7 +242,7 @@
                                     break;
                                 case 0:
                                     Console.WriteLine("Exiting...");
-                                    exit = true;
+                                    appointmentExit = true;
                                     break;
                             }
                         }     
