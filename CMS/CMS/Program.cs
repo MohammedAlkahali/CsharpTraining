@@ -182,14 +182,50 @@
                                             displayNum++;
                                         }
                                     } break;
-                            
-                        
-                                   
 
 
-                                case 3: 
-                                    Console.WriteLine("UPDATE Patient Phone ");
+
+
+
+                                case 3:
+                                    if (patientCount == 0)
+                                    {
+                                        Console.WriteLine("No patients registered.");
+                                    }
+                                    else
+                                    {
+                                        Console.Write("Enter the name of the patient to update: ");
+                                        string searchName = Console.ReadLine();
+
+                                        if (p1Active && p1Name == searchName)
+                                        {
+                                            Console.Write("Enter new phone number: ");
+                                            string newPhone = Console.ReadLine();
+                                            p1Phone = newPhone;
+                                            Console.WriteLine("Phone updated successfully.");
+                                        }
+                                        else if (p2Active && p2Name == searchName)
+                                        {
+                                            Console.Write("Enter new phone number: ");
+                                            string newPhone = Console.ReadLine();
+                                            p2Phone = newPhone;
+                                            Console.WriteLine("Phone updated successfully.");
+                                        }
+                                        else if (p3Active && p3Name == searchName)
+                                        {
+                                            Console.Write("Enter new phone number: ");
+                                            string newPhone = Console.ReadLine();
+                                            p3Phone = newPhone;
+                                            Console.WriteLine("Phone updated successfully.");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Patient not found.");
+                                        }
+                                    }
                                     break;
+
+
                                 case 4:
                                     Console.WriteLine("DELETE Patient ");
                                     break;
