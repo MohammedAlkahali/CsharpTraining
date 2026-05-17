@@ -137,12 +137,56 @@
                                                 Console.WriteLine("Patient added successfully.");
                                             }
                                         }
-                                    }
-                                    break;
+                                    } break;
 
-                                case 2: 
-                                    Console.WriteLine("DISPLAY ALL Patients ");
-                                    break;
+                                case 2:
+
+                                    if (patientCount == 0)
+                                    {
+                                        Console.WriteLine("No patients registered.");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("─────────────────────────────────────");
+                                        Console.WriteLine(" ALL PATIENTS");
+                                        Console.WriteLine("─────────────────────────────────────");
+
+                                        int displayNum = 1;
+
+                                        if (p1Active)
+                                        {
+                                            Console.WriteLine("Patient #" + displayNum);
+                                            Console.WriteLine("Name  : " + p1Name);
+                                            Console.WriteLine("Age   : " + p1Age);
+                                            Console.WriteLine("Phone : " + p1Phone);
+                                            Console.WriteLine("─────────────────────────────────────");
+                                            displayNum++;
+                                        }
+
+                                        if (p2Active)
+                                        {
+                                            Console.WriteLine("Patient #" + displayNum);
+                                            Console.WriteLine("Name  : " + p2Name);
+                                            Console.WriteLine("Age   : " + p2Age);
+                                            Console.WriteLine("Phone : " + p2Phone);
+                                            Console.WriteLine("─────────────────────────────────────");
+                                            displayNum++;
+                                        }
+                                        if (p3Active)
+                                        {
+                                            Console.WriteLine("Patient #" + displayNum);
+                                            Console.WriteLine("Name  : " + p3Name);
+                                            Console.WriteLine("Age   : " + p3Age);
+                                            Console.WriteLine("Phone : " + p3Phone);
+                                            Console.WriteLine("─────────────────────────────────────");
+                                            displayNum++;
+                                        }
+                                    } break;
+                            
+                        
+                                   
+
+
                                 case 3: 
                                     Console.WriteLine("UPDATE Patient Phone ");
                                     break;
